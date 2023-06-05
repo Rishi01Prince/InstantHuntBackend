@@ -1,7 +1,7 @@
 const express = require('express')
 const mongoDB = require("./db");// Importing a custom module that connects to MongoDB
 const app = express()
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 
 
@@ -12,7 +12,7 @@ const port = 5000;
 //This middleware function allows requests from a specific origin (in this case, port 3000) and sets the headers for the request.
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");//isi port pr react render ho rahi hai
+  res.setHeader("Access-Control-Allow-Origin", "https://instant-hunt-backend.onrender.com");//isi port pr react render ho rahi hai
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
