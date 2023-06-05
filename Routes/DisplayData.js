@@ -1,18 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-router.post('/VechicleData' , (req,res)=>{
+router.post('/VechicleData', (req, res) => {
+  try {
+    res.send([global.VechicleData, global.VechicleCategory]);
+  } catch (error) {
+    console.log(error.message);
+    res.send("Server Error");
+  }
+});
 
-
-    try{
-        // console.log(global.VechicleData);
-        // console.log(global.VechicleCategory);
-        res.send([global.VechicleData , global.VechicleCategory])
-
-    }
-    catch(error){
-        console.log(error.messsage);
-        res.send("Server Error");
-    }
-})
 module.exports = router;
