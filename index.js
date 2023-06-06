@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 //This middleware function allows requests from a specific origin (in this case, port 3000) and sets the headers for the request.
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://instant-hunt-frontend-pf4ll7zco-rishi01prince.vercel.app");//isi port pr react render ho rahi hai
+  res.setHeader("Access-Control-Allow-Origin", "https://instant-hunt-frontend.vercel.app/");//isi port pr react render ho rahi hai
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
